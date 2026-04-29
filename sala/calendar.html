@@ -1,153 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento Sala dos Jovem</title>
-    <link rel="stylesheet" href="estilo.css">
-</head>
-<body>
-    <header>
-        <h1>Agenda da Sala dos Jovem</h1>
-        <div class="datetime" id="datetime"></div>
-    </header>
-
-    <div class="tabs">
-        <div class="tab active" data-tab="eventsTab">Agenda</div>
-        <div class="tab" data-tab="scheduleTab">Agendar evento</div> 
-        <div class="tab" data-tab="contactTab">Entrar em contato</div> 
-        <div class="tab" data-tab="locationTab">Localização</div>
-    </div>
-
-    <!-- Conteúdo da aba de eventos -->
-    <div id="eventsTab" class="container active">
-        <div class="box">        
-<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FSao_Paulo&mode=AGENDA&title=Agenda%20da%20Sala%20dos%20Jovens&showPrint=0&showCalendars=0&showTz=0&src=NzVkYTg2ZDQwNzkxNWMxZmYwODkxZDM1NjkyZjkzYTRlYzQ1MTkyMzE5MDA4NzAwZjBmMTExODBhOGUxNTZkMkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F4511E" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe> 
-        </div>
-    </div>
-            
-    <!-- Conteúdo da aba de agendamento -->
-    <div id="scheduleTab" class="container">
-        <div class="box">
-            <h2>Marcar um Agendamento</h2>
-            <form onsubmit="event.preventDefault(); open_schedule_url();">
-
-                <label>
-                    <label for="department">Departamento:</label>
-                    <select id="department" name="department" required>
-                        <option selected value="NA">Outro...</option>
-                        <option value="ACRS">ACRS</option>
-                        <option value="Adolescentes">Adolescentes</option>
-                        <option value="Coral">Coral & Louvor</option>
-                        <option value="ECC">ECC</option>
-                        <option value="ES">Escola Sabatina</option>
-                        <option value="MDA / DBR">Desbravadores</option>
-                        <option value="MDA / AVT">Aventureiros</option>
-                        <option value="Jovens">Jovens</option>
-                        <option value="Evangelismo">Evangelismo</option>
-                        <option value="MM">Ministério da Mulher</option>
-                        <option value="NATI">Núcleo Adventista da Terceira Idade</option>
-                        <option value="MH">Ministério do Homem</option>
-                    </select>
-
-                    <label for="name">Nome do evento:</label>
-                    <input type="text" id="name" name="name" required>
-    
-                </label>
-    
-                <label for="event">Descrição do evento:</label>
-                <textarea id="event" name="event" rows="3" placeholder="Descreva brevemente o evento"></textarea>
-     
-                <label >
-                    <label for="date">Data do Evento:</label>
-                    <input type="date" id="date" name="date" required>
-
-                    <label for="timei">Hora Inicial:</label>
-                    <input type="time" id="timei" name="timei" required>
-    
-                    <label for="timef">Hora Final:</label>
-                    <input type="time" id="timef" name="timef" required>
-    
-                </label>
-
-                <label for="duvida">Dúvida?</label>
-                <input type="text" id="duvida" name="duvida" placeholder="Nenhuma">
-
-                <button type="submit">Marcar um Agendamento</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Conteúdo da aba de contato -->
-    <div id="contactTab" class="container">
-        <div class="box">
-            <h2>Entre em Contato</h2>
-            <button onclick="open_contact_url()">Enviar mensagem via WhatsApp</button>
-        </div>
-    </div>
-
-    <!-- Conteúdo da aba de localização -->
-    <div id="locationTab" class="container">
-        <div class="box">
-            <h2>Localização</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.684921086907!2d-51.1634751!3d-30.017202299999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197776758f50d9%3A0x2b8ed88059845ec3!2sR.%20Roque%20Calage%2C%20593%20-%20Passo%20d&#39;Areia%2C%20Porto%20Alegre%20-%20RS%2C%2091350-090!5e0!3m2!1spt-BR!2sbr!4v1727748914400!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </div>
+    <meta http-equiv="refresh" content="0; url=https://jaiguatemi.github.io/sala/index.html">
+    <title>Redirecionando...</title>
 
     <script>
-         function updateDateTime() {
-            const now = new Date();
-            const options = { dateStyle: 'full', timeStyle: 'medium' };
-            const formattedDateTime = new Intl.DateTimeFormat('pt-BR', options).format(now);
-            document.getElementById('datetime').textContent = formattedDateTime;
-        }
-
-         function open_schedule_url() {
-            const phoneNumber = "5551995474574";
-
-            const department = document.getElementById('department').value;
-            const name = document.getElementById('name').value;
-            const eventDescription = document.getElementById('event').value;
-            const date = document.getElementById('date').value;
-            const timei = document.getElementById('timei').value;
-            const timef = document.getElementById('timef').value;
-            const duvida = document.getElementById('duvida').value;
-
-            const message = `Oi, quero agendar um horário na sala. \n ---------------------------- \n\nDepartamento: ${department}\nNome do Evento: ${name}\nDescrição: ${eventDescription}\nData: ${date}\nHora Inicial: ${timei}\nHora Final: ${timef}\nDúvida: ${duvida || "Nenhuma"}`;
-
-            const URL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(URL, '_blank');
-        }
- 
-        function open_contact_url() {
-            const message = `Oi! Gostaria de informações para agendar a sala dos jovem.`;
-            
-            const phoneNumber = `5551995474574`;
-            const URL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;     
-
-            window.location.href = URL;
-        }
-
-        // Alternar entre abas
-        const tabs = document.querySelectorAll('.tab');
-        const containers = document.querySelectorAll('.container');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const target = tab.getAttribute('data-tab');
-
-                tabs.forEach(t => t.classList.remove('active'));
-                containers.forEach(c => c.classList.remove('active'));
-
-                tab.classList.add('active');
-                document.getElementById(target).classList.add('active');
-            });
-        });
-
-        setInterval(updateDateTime, 1000);
-        updateDateTime();
-
+        // fallback caso o meta refresh não funcione
+        window.location.href = "https://jaiguatemi.github.io/sala/index.html";
     </script>
+</head>
+<body>
+    <p>Redirecionando... Se não funcionar, 
+        <a href="https://jaiguatemi.github.io/sala/index.html">
+            clique aqui
+        </a>.
+    </p>
 </body>
 </html>
