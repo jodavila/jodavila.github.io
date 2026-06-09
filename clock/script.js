@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const totalRequired1 = 60 * 6;                            // 6h
-    const totalRequired2 = 60 * 8;                            // 8h
+    const totalRequired2 = (60 * 8)+48;                            // 8h
     const clockOutMin1   = clockInMin + totalRequired1 + (intervalEndMin - intervalStartMin);
     const clockOutMin2   = clockInMin + totalRequired2 + (intervalEndMin - intervalStartMin);
     
